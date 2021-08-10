@@ -4,6 +4,8 @@
 
 > In this project, we built a basic website that allows users to add/remove books from a list. we achieved that by using JavaScript objects and arrays. We also performed dynamically modification to the DOM and add basic events.
 
+# Live Screenshot 
+
 ![screenshot](./app_screenshot.png)
 
 ## Built With
@@ -13,11 +15,6 @@
 ## Live Demo
 
 [Live Demo Link](https://dansam5k.github.io/Awesome-Books/)
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 ## Authors
 
