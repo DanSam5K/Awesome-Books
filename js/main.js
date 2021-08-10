@@ -1,4 +1,4 @@
-let books = [];
+const books = [];
 
 const removeBtn = document.querySelector('.remove-btn');
 const addBtn = document.querySelector('.add-btn');
@@ -35,12 +35,10 @@ addBtn.addEventListener('click', (e) => {
   books.push(obj);
 });
 
-console.log('Books Length: ', books.length);
 let length = books.length;
 for (let i = 0; i < length; i++) {
   const bookTitle = document.createElement('p');
   bookTitle.innerText = book.title;
-  console.log('Book title: ', books[i].title);
   const bookAuthor = document.createElement('p');
   bookAuthor.innerText = books[i].author;
 
@@ -51,7 +49,6 @@ for (let i = 0; i < length; i++) {
 books.forEach((book) => {
   const bookTitle = document.createElement('p');
   bookTitle.innerText = book.title;
-  console.log('Book title: ', book.title);
   const bookAuthor = document.createElement('p');
   bookAuthor.innerText = book.author;
 
