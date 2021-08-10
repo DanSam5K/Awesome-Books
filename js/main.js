@@ -17,30 +17,26 @@ addBtn.addEventListener('click', (e) => {
   obj.title = title.value;
   obj.author = author.value;
   books.push(obj);
-});
+  console.log(books);
 
-console.log('Books Length: ', books.length);
-let length = books.length;
-for (let i = 0; i < length; i++) {
-  const bookTitle = document.createElement('p');
-  bookTitle.innerText = book.title;
-  console.log('Book title: ', books[i].title);
-  const bookAuthor = document.createElement('p');
-  bookAuthor.innerText = books[i].author;
+  let length = books.length;
+  for (let i = 0; i < length; i++) {
+    const bookTitle = document.createElement('p');
+    bookTitle.innerHTML = books[i].title;
+    const bookAuthor = document.createElement('p');
+    bookAuthor.innerHTML = books[i].author;
+    const removeButton = document.createElement('input');
+    removeButton.setAttribute("value", "Remove");
+    removeButton.setAttribute("type", "submit");
+    const line = document.createElement('hr');
 
-  bookLists.appendChild(bookAuthor);
-  bookLists.appendChild(bookTitle);
-}
 
-books.forEach((book) => {
-  const bookTitle = document.createElement('p');
-  bookTitle.innerText = book.title;
-  console.log('Book title: ', book.title);
-  const bookAuthor = document.createElement('p');
-  bookAuthor.innerText = book.author;
-
-  bookLists.appendChild(bookAuthor);
-  bookLists.appendChild(bookTitle);
+    bookLists.appendChild(bookAuthor);
+    bookLists.appendChild(bookTitle);
+    bookLists.appendChild(removeButton);
+    bookLists.appendChild(line);
+    console.log(bookLists);
+  } 
 });
 
 lists.append(bookLists);
