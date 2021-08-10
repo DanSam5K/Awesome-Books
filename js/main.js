@@ -39,4 +39,8 @@ addBtn.addEventListener('click', (e) => {
   } 
 });
 
+const removeBook = () => {
+    
+}
+
 lists.append(bookLists);
