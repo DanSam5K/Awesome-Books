@@ -2,11 +2,13 @@ let books = [];
 
 const removeBtn = document.querySelector('.remove-btn');
 const addBtn = document.querySelector('.add-btn');
-const title = document.querySelector('.title');
-const author = document.querySelector('.author');
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
 const form = document.querySelector('#form');
 const bookLists = document.createElement('div');
 const lists = document.querySelector('#lists');
+
+let id = 
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -30,6 +32,11 @@ addBtn.addEventListener('click', (e) => {
     removeButton.setAttribute("type", "submit");
     const line = document.createElement('hr');
 
+    //remove child element
+    bookTitle.id = `container${title.value}`;
+    bookAuthor.id = `container${author.value}`;
+    removeButton.setAttribute('onclick', 'removeBook(this.id)');
+
 
     bookLists.appendChild(bookAuthor);
     bookLists.appendChild(bookTitle);
@@ -39,8 +46,16 @@ addBtn.addEventListener('click', (e) => {
   } 
 });
 
-const removeBook = () => {
-    
+const removeBook = (buttonId) => {
+  const bookToRemove = document.getElementById('container' + `${buttonId}`);
+  bookToRemove.parentNode.removeChild(bookToRemove);
+  for(let i = 0; i < books.length; i++){
+      if(books[i].title === buttonId){
+          books.splice(i, 1);
+      }
+  }
 }
+
+
 
 lists.append(bookLists);
