@@ -31,12 +31,10 @@ addBtn.addEventListener('click', (e) => {
     removeButton.setAttribute("value", "Remove");
     removeButton.setAttribute("type", "submit");
     const line = document.createElement('hr');
-
+    
+    bookLists.setAttribute("id", "container")
     //remove child element
-    bookTitle.id = `container${title.value}`;
-    bookAuthor.id = `container${author.value}`;
-    removeButton.setAttribute('onclick', 'removeBook(this.id)');
-
+    removeButton.setAttribute('onclick', 'removeBook(bookLists.id)');
 
     bookLists.appendChild(bookAuthor);
     bookLists.appendChild(bookTitle);
@@ -47,7 +45,7 @@ addBtn.addEventListener('click', (e) => {
 });
 
 const removeBook = (buttonId) => {
-  const bookToRemove = document.getElementById('container' + `${buttonId}`);
+  const bookToRemove = document.getElementById(buttonId);
   bookToRemove.parentNode.removeChild(bookToRemove);
   for(let i = 0; i < books.length; i++){
       if(books[i].title === buttonId){
