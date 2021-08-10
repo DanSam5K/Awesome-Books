@@ -8,22 +8,6 @@ const form = document.querySelector('#form');
 const bookLists = document.createElement('div');
 const lists = document.querySelector('#lists');
 
-// addBtn.onclick = (e) => {
-//   e.preventDefault();
-//   if (title.value === '' && author.value === '') {
-//     alert('Please enter the title and author');
-//     return;
-//   }
-
-//   const option = new Option(title.value, author.value);
-
-//   form.add(option, undefined);
-//   title.value = '';
-//   author.value = '';
-//   title.focus();
-//   author.focus();
-// };
-
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (title.value === '' && author.value === '') {
