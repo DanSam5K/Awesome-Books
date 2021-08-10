@@ -4,20 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>Awesome Books</title>
+    <title>Manage books using objects</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Awesome Books</h1>
-    <div id="lists">
-    </div>
-    <hr />
+    <ul id="books-list"></ul>
     <form action="#" id="form">
-      <input id="title" type="text" placeholder="Title" class="title" /><br /><br />
-      <input id="author" type="text" placeholder="Author" class="author" /><br /><br />
-      <input id="add-button" type="submit" value="Add" class="add-btn" />
+      <input type="text" id="book-title" />
+      <input type="text" id="book-author" />
+      <input type="submit" />
     </form>
-    <script src="./js/main.js"></script>
+
+    <template id="list-item-template">
+      <li class="list-item" data-books-id="">
+        <label class="list-item-label">
+          <span data-list-item-book-title></span> -
+          <span data-list-item-book-author></span>
+        </label>
+        <button data-button-delete>Delete</button>
+      </li>
+    </template>
   </body>
 </html>
-    

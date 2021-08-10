@@ -1,63 +1,64 @@
-const books = [];
-
-const removeBtn = document.querySelector('.remove-btn');
-const addBtn = document.querySelector('.add-btn');
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
 const form = document.querySelector('#form');
-const bookLists = document.createElement('div');
-const lists = document.querySelector('#lists');
+const bookTitleField = document.querySelector('#book-title');
+const bookAuthorField = document.querySelector('#book-author');
+const booksListContainer = document.querySelector('#books-list');
+const template = document.querySelector('#list-item-template');
+const LOCAL_STORAGE_PREFIX = 'AWESOME_BOOKS';
+const BOOKS_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-books`;
+let books = loadBookInfo();
+books.forEach((book) => renderBookInfo(book));
 
-let id = addBtn.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  if (title.value === '' && author.value === '') {
-    alert('Please enter the title and author');
-  }
-  const obj = Object.create({});
-  obj.title = title.value;
-  obj.author = author.value;
-  books.push(obj);
-  form.reset();
-  console.log(books);
-
-  for (let i = 0; i < books.length; i++) {
-    const bookTitle = document.createElement('p');
-    bookTitle.innerHTML = books[i].title;
-    const bookAuthor = document.createElement('p');
-    bookAuthor.innerHTML = books[i].author;
-    const removeButton = document.createElement('input');
-    removeButton.setAttribute('value', 'Remove');
-    removeButton.setAttribute('type', 'submit');
-    const line = document.createElement('hr');
-
-    bookLists.setAttribute('id', 'container');
-    //remove child element
-    removeButton.setAttribute('onclick', 'removeBook(bookLists.id)');
-
-    bookLists.appendChild(bookAuthor);
-    bookLists.appendChild(bookTitle);
-    bookLists.appendChild(removeButton);
-    bookLists.appendChild(line);
-    console.log(bookLists);
-  }
+  const bookTitle = bookTitleField.value;
+  const bookAuthor = bookAuthorField.value;
+  if (bookTitle === '' && bookAuthor === '') return;
+  const bookInfo = {
+    title: bookTitle,
+    author: bookAuthor,
+    id: new Date().valueOf().toString(),
+  };
+  books.push(bookInfo);
+  renderBookInfo(bookInfo);
+  saveBookInfo();
+  bookTitleField.value = '';
+  bookAuthorField.value = '';
 });
 
-let length = books.length;
-for (let i = 0; i < length; i++) {
-  const bookTitle = document.createElement('p');
-  bookTitle.innerText = book.title;
-  const bookAuthor = document.createElement('p');
-  bookAuthor.innerText = books[i].author;
-
-  bookLists.appendChild(bookAuthor);
-  bookLists.appendChild(bookTitle);
+function renderBookInfo(bookInfo) {
+  const templateClone = template.content.cloneNode(true);
+  const listItem = templateClone.querySelector('.list-item');
+  listItem.dataset.booksId = bookInfo.id;
+  const renderTitle = templateClone.querySelector(
+    '[data-list-item-book-title]'
+  );
+  const renderAuthor = templateClone.querySelector(
+    '[data-list-item-book-author]'
+  );
+  renderTitle.innerText = bookInfo.title;
+  renderAuthor.innerText = bookInfo.author;
+  booksListContainer.appendChild(templateClone);
 }
 
-books.forEach((book) => {
-  const bookTitle = document.createElement('p');
-  bookTitle.innerText = book.title;
-  const bookAuthor = document.createElement('p');
-  bookAuthor.innerText = book.author;
+function loadBookInfo() {
+  const bookString = localStorage.getItem(BOOKS_STORAGE_KEY);
+  return JSON.parse(bookString) || [];
+}
 
-  lists.append(bookLists);
+function saveBookInfo() {
+  localStorage.setItem(BOOKS_STORAGE_KEY, JSON.stringify(books));
+}
+
+// Delete Books
+booksListContainer.addEventListener('click', (e) => {
+  if (!e.target.matches('[data-button-delete]')) return;
+  const parent = e.target.closest('.list-item');
+  const bookID = parent.dataset.booksId;
+  // Remove from list
+  books = books.filter((book) => book.id !== bookID);
+  // remove from screen
+  parent.remove();
+
+  // save new list
+  saveBookInfo();
 });
