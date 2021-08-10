@@ -19,10 +19,10 @@ addBtn.addEventListener('click', (e) => {
   obj.title = title.value;
   obj.author = author.value;
   books.push(obj);
+  form.reset();
   console.log(books);
 
-  let length = books.length;
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < books.length; i++) {
     const bookTitle = document.createElement('p');
     bookTitle.innerHTML = books[i].title;
     const bookAuthor = document.createElement('p');
@@ -31,7 +31,7 @@ addBtn.addEventListener('click', (e) => {
     removeButton.setAttribute("value", "Remove");
     removeButton.setAttribute("type", "submit");
     const line = document.createElement('hr');
-    
+ 
     bookLists.setAttribute("id", "container")
     //remove child element
     removeButton.setAttribute('onclick', 'removeBook(bookLists.id)');
@@ -41,7 +41,10 @@ addBtn.addEventListener('click', (e) => {
     bookLists.appendChild(removeButton);
     bookLists.appendChild(line);
     console.log(bookLists);
-  } 
+
+
+ } 
+  
 });
 
 const removeBook = (buttonId) => {
