@@ -2,29 +2,13 @@ const books = [];
 
 const removeBtn = document.querySelector('.remove-btn');
 const addBtn = document.querySelector('.add-btn');
-const title = document.querySelector('.title');
-const author = document.querySelector('.author');
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
 const form = document.querySelector('#form');
 const bookLists = document.createElement('div');
 const lists = document.querySelector('#lists');
 
-// addBtn.onclick = (e) => {
-//   e.preventDefault();
-//   if (title.value === '' && author.value === '') {
-//     alert('Please enter the title and author');
-//     return;
-//   }
-
-//   const option = new Option(title.value, author.value);
-
-//   form.add(option, undefined);
-//   title.value = '';
-//   author.value = '';
-//   title.focus();
-//   author.focus();
-// };
-
-addBtn.addEventListener('click', (e) => {
+let id = addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (title.value === '' && author.value === '') {
     alert('Please enter the title and author');
@@ -33,6 +17,29 @@ addBtn.addEventListener('click', (e) => {
   obj.title = title.value;
   obj.author = author.value;
   books.push(obj);
+  form.reset();
+  console.log(books);
+
+  for (let i = 0; i < books.length; i++) {
+    const bookTitle = document.createElement('p');
+    bookTitle.innerHTML = books[i].title;
+    const bookAuthor = document.createElement('p');
+    bookAuthor.innerHTML = books[i].author;
+    const removeButton = document.createElement('input');
+    removeButton.setAttribute('value', 'Remove');
+    removeButton.setAttribute('type', 'submit');
+    const line = document.createElement('hr');
+
+    bookLists.setAttribute('id', 'container');
+    //remove child element
+    removeButton.setAttribute('onclick', 'removeBook(bookLists.id)');
+
+    bookLists.appendChild(bookAuthor);
+    bookLists.appendChild(bookTitle);
+    bookLists.appendChild(removeButton);
+    bookLists.appendChild(line);
+    console.log(bookLists);
+  }
 });
 
 let length = books.length;
@@ -52,8 +59,5 @@ books.forEach((book) => {
   const bookAuthor = document.createElement('p');
   bookAuthor.innerText = book.author;
 
-  bookLists.appendChild(bookAuthor);
-  bookLists.appendChild(bookTitle);
+  lists.append(bookLists);
 });
-
-lists.append(bookLists);
