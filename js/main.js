@@ -15,4 +15,16 @@ class UI {
 
         books.forEach((book) => UI.addBookToList(book));
     }
+
+    static addBookToList(book) {
+       const list = document.querySelector('#book-list')
+       const row = document.createElement('tr');
+       row.innerHTML = `
+         <td>${book.title}</td>
+         <td>${book.author}</td>
+         <td><button type="button" class="delete">Remove</button></td>
+       `;
+
+       list.appendChild(row);
+    }
 }
