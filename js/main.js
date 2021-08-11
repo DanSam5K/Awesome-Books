@@ -21,7 +21,7 @@ class UI {
     row.innerHTML = `
          <td>${book.title}</td>
          <td>${book.author}</td>
-         <td><button type="button" class="delete">Remove</button></td>
+         <td><button type="button" class="delete btn btn-danger">Remove</button></td>
        `;
 
     list.appendChild(row);
@@ -94,7 +94,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   const author = document.querySelector('#author').value;
   // validate
   if (title === '' || author === '') {
-    UI.showAlert('Please fill in all fields', 'success');
+    UI.showAlert('Please fill in all fields', 'danger');
   } else {
     // Instantiate book
     const book = new Book(title, author);
