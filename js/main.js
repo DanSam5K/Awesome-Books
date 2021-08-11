@@ -78,3 +78,7 @@ class Store {
     localStorage.setItem('books', JSON.stringify(books));
   }
 }
+
+//Events: display books
+
+document.addEventListener('DOMContentLoaded', UI.displayBooks);
