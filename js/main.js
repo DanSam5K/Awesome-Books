@@ -27,4 +27,10 @@ class UI {
 
        list.appendChild(row);
     }
+
+    static deleteBook(element) {
+        if(element.classList.contains('delete')) {
+            element.parentElement.parentElement.remove();
+        }
+    }
 }
