@@ -106,3 +106,13 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
    UI.clearFields()
    }
 })
+
+//Events: to remove a book
+document.querySelector('#book-list').addEventListener('click', (e) => {
+    //remove book from UI
+    UI.deleteBook(e.target);
+    //remove book from store
+    Store.removeBooks(e.target.parentElement.previousElementSibling.textContent);
+    //sucess delete
+    UI.showAlert('Book deleted', 'success');
+})
