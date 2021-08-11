@@ -4,25 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manage books using objects</title>
+    <title>Manage Books</title>
     <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <ul id="books-list"></ul>
-    <form action="#" id="form">
-      <input type="text" id="book-title" />
-      <input type="text" id="book-author" />
-      <input type="submit" />
-    </form>
+    <div class="container">
+      <h1>Awesome Books</h1>
 
-    <template id="list-item-template">
-      <li class="list-item" data-books-id="">
-        <label class="list-item-label">
-          <span data-list-item-book-title></span> -
-          <span data-list-item-book-author></span>
-        </label>
-        <button data-button-delete>Delete</button>
-      </li>
-    </template>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table><br><br>
+      <form id="book-form">
+        <div>
+          <input type="text" name="title" id="title" placeholder="Title">
+        </div> <br>
+        <div>
+          <input type="text" name="author" id="author" placeholder="Author">
+        </div><br>
+        <input type="submit" id="button-add" value="Add Book">
+      </form>
+    </div>
   </body>
 </html>
