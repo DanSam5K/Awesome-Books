@@ -82,3 +82,27 @@ class Store {
 //Events: display books
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
+
+//Events: to add a Book
+document.querySelector('#book-form').addEventListener('submit', (e) => {
+    // Prevent actual submit
+    e.preventDefault();
+   //get form values
+   const title = document.querySelector('#title').value;
+   const author = document.querySelector('#author').value;
+   //validate 
+   if(title === '' || author === '') {
+       UI.showAlert("Please fill in all fields", "success")
+   } else {
+    //Instantiate book
+   const book = new Book(title, author);
+   //add book to UI
+   UI.addBookToList(book);
+   //addbook to store
+   Store.addBook(book);
+   //Show success
+   UI.showAlert('Book Added', 'success');
+   //clear fields
+   UI.clearFields()
+   }
+})
