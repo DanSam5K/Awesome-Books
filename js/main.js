@@ -1,5 +1,5 @@
 // var DateTime = luxon.DateTime;
-let date = new Date();
+const date = new Date();
 document.querySelector('#date').textContent = `Date: ${
   date.getMonth() + 1
 }, ${date.getUTCDay()}, ${date.getFullYear()}, Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
