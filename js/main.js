@@ -75,6 +75,14 @@ class UI {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
   }
+
+  static viewList() {
+    document.querySelector('#list-view').classList.add("active");
+    document.querySelector('#list-view').setAttribute("aria-current", "page");
+    document.querySelector('#table-data').classList.remove("visually-hidden");
+    document.querySelector('#book-form').classList.add("visually-hidden");
+    document.querySelector('#form-title').classList.add("visually-hidden");
+  }
 }
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -98,3 +106,5 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   Store.removeBooks(e.target.parentElement.previousElementSibling.textContent);
   UI.showAlert('Book deleted', 'success');
 });
+
+
