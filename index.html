@@ -15,26 +15,26 @@
     <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <nav class="d-flex justify-content-between container my-4 max-width-700">
+    <nav class="d-flex justify-content-between my-4 max-width-700">
       <h1 class="display-6 ">
         All Awesome <span class="text-primary">Books</span>
       </h1>
       <ul class="nav justify-content-end">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">List</a>
+          <a id="list-view" class="nav-link" href="#">List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Add New</a>
+          <a id="add-view" class="nav-link active" aria-current="page" href="index.html">Add New</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a id="contact-view" class="nav-link" href="#">Contact</a>
         </li>
-        
       </ul>
     </nav>
     <div class="container my-4 max-width-700">
 
-      <table class="table table-striped mt-5">
+      <table id="table-data" class="table table-striped mt-5 visually-hidden">
         <thead>
           <tr>
             <th>Title</th>
@@ -45,35 +45,18 @@
         <tbody id="book-list"></tbody>
       </table>
       <br /><br />
-      <h2 class="text-primary">Add a new Book</h2>
-      <form id="book-form">
+      <h2 id="form-title" class="text-primary">Add a new Book</h2>
+      <form id="book-form" class="add-view">
         <div class="form-group">
-          <input
-            id="title"
-            class="form-control"
-            type="text"
-            name="title"
-            placeholder="Title"
-          />
+          <input id="title" class="form-control" type="text" name="title" placeholder="Title"/>
         </div>
         <br />
         <div class="form-group">
-          <input
-            id="author"
-            class="form-control"
-            type="text"
-            name="author"
-            placeholder="Author"
-          />
+          <input id="author" class="form-control" type="text" name="author" placeholder="Author"/>
         </div>
         <br />
         <div class="form-group d-flex justify-content-end">
-          <input
-            class="btn btn-primary btn-block"
-            type="submit"
-            id="button-add"
-            value="Add Book"
-          />
+          <input class="btn btn-primary btn-block" type="submit" id="button-add" value="Add Book"/>
         </div>
       </form>
     </div>
