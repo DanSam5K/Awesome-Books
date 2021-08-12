@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Books</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <h1>Awesome Books</h1>
+    <div class="container my-4 max-width-700">
+      <h1 class="display-4 text-center">
+        All Awesome <span class="text-primary">Books</span>
+      </h1>
 
-      <table>
+      <table class="table table-striped mt-5">
         <thead>
           <tr>
             <th>Title</th>
@@ -20,16 +29,44 @@
           </tr>
         </thead>
         <tbody id="book-list"></tbody>
-      </table><br><br>
+      </table>
+      <br /><br />
+      <h2 class="text-primary">Add a new Book</h2>
       <form id="book-form">
-        <div>
-          <input type="text" name="title" id="title" placeholder="Title">
-        </div> <br>
-        <div>
-          <input type="text" name="author" id="author" placeholder="Author">
-        </div><br>
-        <input type="submit" id="button-add" value="Add Book">
+        <div class="form-group">
+          <input
+            id="title"
+            class="form-control"
+            type="text"
+            name="title"
+            placeholder="Title"
+          />
+        </div>
+        <br />
+        <div class="form-group">
+          <input
+            id="author"
+            class="form-control"
+            type="text"
+            name="author"
+            placeholder="Author"
+          />
+        </div>
+        <br />
+        <div class="form-group d-flex justify-content-end">
+          <input
+            class="btn btn-primary btn-block"
+            type="submit"
+            id="button-add"
+            value="Add Book"
+          />
+        </div>
       </form>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -1,4 +1,3 @@
-// Book Class: Represents a book
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -50,7 +49,7 @@ class UI {
     row.innerHTML = `
          <td>${book.title}</td>
          <td>${book.author}</td>
-         <td><button type="button" class="delete">Remove</button></td>
+         <td class="d-flex justify-content-end"><button type="button" class="delete btn btn-danger">Remove</button></td>
        `;
 
     list.appendChild(row);
@@ -69,7 +68,6 @@ class UI {
     const container = document.querySelector('.container');
     const form = document.querySelector('#book-form');
     container.insertBefore(div, form);
-    // vanish alert
     setTimeout(() => document.querySelector('.alert').remove(), 2000);
   }
 
@@ -79,40 +77,24 @@ class UI {
   }
 }
 
-// Events: display books
-
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
-
-// Events: to add a Book
 document.querySelector('#book-form').addEventListener('submit', (e) => {
-  // Prevent actual submit
   e.preventDefault();
-  // get form values
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  // validate
   if (title === '' || author === '') {
-    UI.showAlert('Please fill in all fields', 'success');
+    UI.showAlert('Please fill in all fields', 'danger');
   } else {
-    // Instantiate book
     const book = new Book(title, author);
-    // add book to UI
     UI.addBookToList(book);
-    // addbook to store
     Store.addBook(book);
-    // Show success
     UI.showAlert('Book Added', 'success');
-    // clear fields
     UI.clearFields();
   }
 });
 
-// Events: to remove a book
 document.querySelector('#book-list').addEventListener('click', (e) => {
-  // remove book from UI
   UI.deleteBook(e.target);
-  // remove book from store
   Store.removeBooks(e.target.parentElement.previousElementSibling.textContent);
-  // sucess delete
   UI.showAlert('Book deleted', 'success');
 });
