@@ -10,7 +10,11 @@
 
 ## Built With
 
-- HTML and Javascript
+- HTML
+- CSS
+- Javascript
+- Bootstrap
+- Linters (ESlint, Stylelint, WebHint)
 
 ## Live Demo
 
