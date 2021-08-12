@@ -107,4 +107,4 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   UI.showAlert('Book deleted', 'success');
 });
 
-
+document.querySelector('#list-view').addEventListener('click', UI.viewList);
