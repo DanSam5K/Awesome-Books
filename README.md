@@ -34,11 +34,11 @@
 - Twitter: [@_dan_sam](https://twitter.com/_dan_sam)
 - Linkedin: [dansamuel](https://www.linkedin.com/in/dansamuel/)
 
-👤 **Josh**
+👤 **KARANGWA Ntwali Josue**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/Ntwali-Josue)
+- Twitter: [@twitterhandle](https://twitter.com/JosueNtwali)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/karangwa)
 
 ## 🤝 Contributing
 
