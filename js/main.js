@@ -1,3 +1,8 @@
+// var DateTime = luxon.DateTime;
+let date = new Date();
+document.querySelector('#date').textContent = `Date: ${
+  date.getMonth() + 1
+}, ${date.getUTCDay()}, ${date.getFullYear()}, Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -77,18 +82,20 @@ class UI {
   }
 
   static viewList() {
-    document.querySelector('#list-view').classList.add("active");
-    document.querySelector('#list-view').setAttribute("aria-current", "page");
-    document.querySelector('#table-data').classList.remove("visually-hidden");
-    document.querySelector('#book-form').classList.add("visually-hidden");
-    document.querySelector('#form-title').classList.add("visually-hidden");
+    document.querySelector('#list-view').classList.add('active');
+    document.querySelector('#list-view').setAttribute('aria-current', 'page');
+    document.querySelector('#table-data').classList.remove('visually-hidden');
+    document.querySelector('#book-form').classList.add('visually-hidden');
+    document.querySelector('#form-title').classList.add('visually-hidden');
   }
 
   static viewContact() {
-    document.querySelector('#contact-view').classList.add("active");
-    document.querySelector('#contact-view').setAttribute("aria-current", "page");
-    document.querySelector('#contact').classList.remove("visually-hidden");
-    document.querySelector('#main-content').classList.add("visually-hidden");
+    document.querySelector('#contact-view').classList.add('active');
+    document
+      .querySelector('#contact-view')
+      .setAttribute('aria-current', 'page');
+    document.querySelector('#contact').classList.remove('visually-hidden');
+    document.querySelector('#main-content').classList.add('visually-hidden');
   }
 }
 
@@ -115,4 +122,6 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
 });
 
 document.querySelector('#list-view').addEventListener('click', UI.viewList);
-document.querySelector('#contact-view').addEventListener('click', UI.viewContact);
+document
+  .querySelector('#contact-view')
+  .addEventListener('click', UI.viewContact);
