@@ -10,7 +10,11 @@
 
 ## Built With
 
-- HTML and Javascript
+- HTML
+- CSS
+- Javascript
+- Bootstrap
+- Linters (ESlint, Stylelint, WebHint)
 
 ## Live Demo
 
@@ -26,9 +30,9 @@
 
 👤 **Daniel Samuel**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Github: [DanSam5k](https://github.com/DanSam5k)
+- Twitter: [@_dan_sam](https://twitter.com/_dan_sam)
+- Linkedin: [dansamuel](https://www.linkedin.com/in/dansamuel/)
 
 👤 **Josh**
 
@@ -40,7 +44,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/DanSam5K/Awesome-Books/issues).
 
 ## Show your support
 
@@ -54,4 +58,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) licensed.
