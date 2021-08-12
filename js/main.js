@@ -21,7 +21,7 @@ class UI {
     row.innerHTML = `
          <td>${book.title}</td>
          <td>${book.author}</td>
-         <td><button type="button" class="delete btn btn-danger">Remove</button></td>
+         <td class="d-flex justify-content-end"><button type="button" class="delete btn btn-danger">Remove</button></td>
        `;
 
     list.appendChild(row);
