@@ -83,6 +83,13 @@ class UI {
     document.querySelector('#book-form').classList.add("visually-hidden");
     document.querySelector('#form-title').classList.add("visually-hidden");
   }
+
+  static viewContact() {
+    document.querySelector('#contact-view').classList.add("active");
+    document.querySelector('#contact-view').setAttribute("aria-current", "page");
+    document.querySelector('#contact').classList.remove("visually-hidden");
+    document.querySelector('#main-content').classList.add("visually-hidden");
+  }
 }
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -108,3 +115,4 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
 });
 
 document.querySelector('#list-view').addEventListener('click', UI.viewList);
+document.querySelector('#contact-view').addEventListener('click', UI.viewContact);
