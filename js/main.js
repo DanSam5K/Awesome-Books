@@ -1,8 +1,9 @@
-// var DateTime = luxon.DateTime;
+// import { DateTime } from "./js/luxon.min.js";
+//import { DateTime } from "luxon";
+
 const date = new Date();
-document.querySelector('#date').textContent = `Date: ${
-  date.getMonth() + 1
-}, ${date.getUTCDay()}, ${date.getFullYear()}, Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+document.querySelector('#date').textContent = `Date: ${date.getMonth() + 1}, ${date.getUTCDay()}, ${date.getFullYear()}, Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+ 
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -97,6 +98,12 @@ class UI {
     document.querySelector('#contact').classList.remove('visually-hidden');
     document.querySelector('#main-content').classList.add('visually-hidden');
   }
+
+  // static getTime() {
+  //   const date = DateTime.now();
+  //   return date;
+  // }
+  
 }
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -125,3 +132,5 @@ document.querySelector('#list-view').addEventListener('click', UI.viewList);
 document
   .querySelector('#contact-view')
   .addEventListener('click', UI.viewContact);
+
+// document.querySelector('#date').textContent = UI.getTime();
