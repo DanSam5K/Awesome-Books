@@ -5,26 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Books</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <nav
-      class="
-        d-flex
-        justify-content-between
-        align-items-center
-        my-4
-        max-width-800
-        border
-      "
-    >
+    <nav class="d-flex justify-content-between align-items-center my-4 max-width-800 border">
       <h1 class="display-8 px-3">
         All Awesome <span class="text-primary">Books</span>
       </h1>
@@ -33,13 +21,7 @@
           <a id="list-view" class="nav-link" href="#">List</a>
         </li>
         <li class="nav-item border border-top-0 border-bottom-0">
-          <a
-            id="add-view"
-            class="nav-link active"
-            aria-current="page"
-            href="index.html"
-            >Add New</a
-          >
+          <a id="add-view" class="nav-link active" aria-current="page" href="index.html">Add New</a>
         </li>
         <li class="nav-item">
           <a id="contact-view" class="nav-link" href="#">Contact</a>
@@ -65,32 +47,15 @@
         <h1 id="form-title" class="text-primary">Add a new Book</h1>
         <form id="book-form" class="add-view">
           <div class="form-group">
-            <input
-              id="title"
-              class="form-control"
-              type="text"
-              name="title"
-              placeholder="Title"
-            />
+            <input id="title" class="form-control" type="text" name="title" placeholder="Title"/>
           </div>
           <br />
           <div class="form-group">
-            <input
-              id="author"
-              class="form-control"
-              type="text"
-              name="author"
-              placeholder="Author"
-            />
+            <input id="author" class="form-control" type="text" name="author" placeholder="Author"/>
           </div>
           <br />
           <div class="form-group d-flex justify-content-end">
-            <input
-              class="btn btn-primary btn-block"
-              type="submit"
-              id="button-add"
-              value="Add Book"
-            />
+            <input class="btn btn-primary btn-block" type="submit" id="button-add" value="Add Book"/>
           </div>
         </form>
       </div>
