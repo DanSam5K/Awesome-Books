@@ -12,3 +12,7 @@
 .active {
   opacity: 0.6;
 }
+
+.main-section {
+  min-height: 70vh;
+}
