@@ -1,4 +1,4 @@
-const { DateTime } = luxon;
+const dateTime = luxon.DateTime;
 
 class Book {
   constructor(title, author) {
@@ -100,10 +100,9 @@ class UI {
   }
 
   static getTime() {
-    const date = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+    const date = dateTime.now().toLocaleString(dateTime.DATETIME_MED);
     return date;
   }
-  
 }
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
