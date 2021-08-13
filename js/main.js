@@ -75,6 +75,33 @@ class UI {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
   }
+
+  static viewList() {
+    document.querySelector('#list-view').classList.add('active');
+    document.querySelector('#list-view').setAttribute('aria-current', 'page');
+    document.querySelector('#table-data').classList.remove('visually-hidden');
+    document.querySelector('#book-form').classList.add('visually-hidden');
+    document.querySelector('#form-title').classList.add('visually-hidden');
+    document.querySelector('#add-view').classList.remove('active');
+    document.querySelector('#contact-view').classList.remove('active');
+  }
+
+  static viewContact() {
+    document.querySelector('#contact-view').classList.add('active');
+    document
+      .querySelector('#contact-view')
+      .setAttribute('aria-current', 'page');
+    document.querySelector('#contact').classList.remove('visually-hidden');
+    document.querySelector('#main-content').classList.add('visually-hidden');
+    document.querySelector('#add-view').classList.remove('active');
+    document.querySelector('#list-view').classList.remove('active');
+  }
+
+  static getTime() {
+    const { DateTime } = luxon;
+    const date = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+    return date;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -98,3 +125,10 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   Store.removeBooks(e.target.parentElement.previousElementSibling.textContent);
   UI.showAlert('Book deleted', 'success');
 });
+
+document.querySelector('#list-view').addEventListener('click', UI.viewList);
+document
+  .querySelector('#contact-view')
+  .addEventListener('click', UI.viewContact);
+
+document.querySelector('#date').textContent = UI.getTime();

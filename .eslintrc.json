@@ -11,6 +11,7 @@
   },
   "extends": ["airbnb-base"],
   "rules": {
+    "no-undef": "off",
     "max-classes-per-file": ["error", 4],
     "no-shadow": "off",
     "no-param-reassign": "off",
