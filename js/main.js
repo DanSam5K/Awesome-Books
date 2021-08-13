@@ -84,6 +84,8 @@ class UI {
     document.querySelector('#table-data').classList.remove('visually-hidden');
     document.querySelector('#book-form').classList.add('visually-hidden');
     document.querySelector('#form-title').classList.add('visually-hidden');
+    document.querySelector('#add-view').classList.remove('active');
+    document.querySelector('#contact-view').classList.remove('active');
   }
 
   static viewContact() {
@@ -93,6 +95,8 @@ class UI {
       .setAttribute('aria-current', 'page');
     document.querySelector('#contact').classList.remove('visually-hidden');
     document.querySelector('#main-content').classList.add('visually-hidden');
+    document.querySelector('#add-view').classList.remove('active');
+    document.querySelector('#list-view').classList.remove('active');
   }
 
   static getTime() {
