@@ -8,3 +8,7 @@
   max-width: 800px;
   margin: 0 auto;
 }
+
+.active {
+  opacity: 0.6;
+}
